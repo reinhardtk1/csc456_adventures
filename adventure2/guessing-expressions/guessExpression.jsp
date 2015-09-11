@@ -9,7 +9,7 @@
 <% if (guess.getCorrectNumber() == 1) { %>
 	<h1>Guessing Game.</h1>
   	<p>Congratulations!  You got it.
-  	It was <%= guess.getNumber() %> .</p>
+  	It was ${ guess.getNumber() } .</p>
   	<% guess.reset(); %>
   	<p><a href="guess.jsp">Play Again?</a></p>
 <% } else if (guess.getCounter()== 0) { %>
@@ -18,7 +18,7 @@
 	  <form method="post" action="guess.jsp">
 	  	Guess a Number: 
 		<input type="text" name="guess">
-		<input type="hidden" id="number" value="<%= guess.getNumber() %>" name="number">
+		<input type="hidden" id="number" value="${ guess.getNumber() }" name="number">
 		<br><br>
 		<input type="submit" value="Submit">
 		<input type="button" value="Hint" onclick="showHint()">
@@ -27,13 +27,13 @@
 <% } else { %>
 	<h1>Guessing Game.</h1>
   	<p>Sorry that was incorrect.  
-  	Try going <%= guess.getHelp() %>.</p>
+  	Try going ${ guess.getHelp() }.</p>
   	<p>Guess a number between 1 and 10.</p>
   	<form method="post" action="guess.jsp">
 	  	Guess a Number 
 		<br>
 		<input type="text" name="guess">
-		<input type="hidden" id="number" value="<%= guess.getNumber() %>" name="number">
+		<input type="hidden" id="number" value="${ guess.getNumber() }" name="number">
 		<br><br>
 		<input type="submit" value="Submit">
 		<input type="button" value="Hint" onclick="showHint()">
